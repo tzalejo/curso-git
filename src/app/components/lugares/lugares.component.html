@@ -1,0 +1,45 @@
+<!-- (@contenedorAnimable.start)="" llamamos a la callbacks -->
+<!-- (@contenedorAnimable.done)="" llamamos a la callbacks -->
+<!-- <div id="cuadrado" [@contenedorAnimable]="state" (@contenedorAnimable.start)="animacionInicia($event)" (@contenedorAnimable.done)="animacionFinaliza($event)">
+
+</div> 
+<a class="btn btn-primary" (click)="animar()">Animar</a>-->
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Lugares cercanos</h2>
+      <a class="btn btn-primary" routerLink="/crear/new">Crear Nuevo Negocio</a>
+      <ul class="list-group">
+        <ng-container *ngFor="let lugar of lugares">
+          <!-- queryparams me permite enviar info meidante parametro -->
+          <!-- routerlink  -->
+          <li class="list-group-item ">
+            <h3>
+              <a routerLink="/crear/{{lugar.id}}">
+                {{lugar.nombre | uppercase}}
+              </a>
+              <i class="fas fa-grin-stars fa-pull-right" *ngIf="lugar.plan == 'gratuito'"></i>
+            </h3>
+            <br>
+            <!-- los | (pipe) nos permite transformar el texto -->
+            <small>Creado: {{lugar.id | date:'medium' | uppercase}}</small>
+            <!-- linkifystr es un pipe creardo que me permite ver el texto q tiene un link como tal -->
+            <p [innerHtml]="lugar.descripcion | linkifystr"></p>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+    <div class="col-md-4" [@contenedorAnimable]="state">
+      <h2>Destacados</h2>
+      <ng-container *ngFor="let lugar of lugares">
+        <div class="card bg-light text-white padding"  *ngIf="lugar.plan == 'gratuito'">
+          <a routerLink="/crear/{{lugar.id}}">
+            <h3>{{lugar.nombre | uppercase}}</h3>
+          </a>
+          <!-- linkifystr es un pipe creardo que me permite ver el texto q tiene un link como tal -->
+          <p class="text-dark" [innerHtml]="lugar.descripcion | linkifystr"></p>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

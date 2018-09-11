@@ -1,0 +1,38 @@
+<div class="jumbotron">
+  <div class="row">
+      <div class="col-md-8">
+          <h2>Datos de la Empresa</h2>
+          <label for="">Nombre</label>
+          <input type="text" class="form-control" name="nombre" [(ngModel)]="lugar.nombre">
+          
+          <label for="">Distancia</label>
+          <input type="number" class="form-control" name="distancia" [(ngModel)]="lugar.distancia">
+          
+          <label for="">Cercania</label>
+          <input type="number" class="form-control" name="cercania" [(ngModel)]="lugar.cercania">
+          
+          <label for="">Descripcion</label>
+          <input type="text" class="form-control" name="descripcion" [(ngModel)]="lugar.descripcion">
+          
+          <label for="">Plan</label>
+          <input type="text" class="form-control" name="plan" [(ngModel)]="lugar.plan">
+
+          <h2>Datos de Direccion</h2>
+          
+          <label for="">Calle y Numero</label>
+          <input type="text" class="form-control" name="calle" [(ngModel)]="lugar.calle">
+          
+          <label for="">Ciudad</label>
+          <input type="text" class="form-control" name="ciudad" [(ngModel)]="lugar.ciudad">
+          
+          <label for="">Pais</label>
+          <input type="text" class="form-control" name="pais" [(ngModel)]="lugar.pais">
+          
+          <br>
+          <!-- <a class="btn btn-primary">Enviar</a>
+          <a class="btn btn-secondary" routerLink ="/lugares">Cancelar</a> -->
+          <button type="submit" class="btn btn-primary" (click)="guardarLugar()">Enviar</button>
+          <button type="submit" class="btn btn-secondary" routerLink="/lugares">Cancelar</button>
+        </div>
+  </div>
+</div>

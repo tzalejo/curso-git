@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Platzi-Square</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive ="active" routerLink="/lugares">Inicio <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive ="active" routerLink="/contacto">Contactos</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <button class="btn btn-outline-success mr-sm-2" routerLink="/login">Login</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" routerLink="/registro">Registro</button>
+
+    </form>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+
+
+<!-- <h2>Listado de Personas mayores de edad</h2>
+<ul>
+  <ng-container *ngFor="let mayorEdad of persona">
+    <li *ngIf="mayorEdad.edad > 17">
+      <p>
+        Nombre {{mayorEdad.nombre}}
+      </p>
+      <p>Edad {{mayorEdad.edad}}</p>
+    </li>
+  </ng-container>
+</ul>
+<h2>Listado con NgStyle</h2>
+<ul>
+  <ng-container *ngFor="let mayorEdad of personas; let i = index">
+    <li [ngStyle]="{color: (mayorEdad.edad>17) ? 'black' : 'red' }" 
+        [ngClass]="{numero_par: (i+1) % 2  !==0}" >
+      Nombre {{mayorEdad.nombre}}
+      Edad {{mayorEdad.edad}}
+    </li>
+  </ng-container>
+</ul> -->
+<!-- 
+<h2>NgSwitch</h2>
+<ul>
+  <ng-container *ngFor="let lugar of lugares" [ngSwitch]="lugar.cercania" >
+    <a >
+      directiva contar-click fue especificad para link <a></a> 
+      directiva resaltar
+      <li contar-clicks [resaltar]="lugar.plan"> 
+        {{lugar.nombre}}  -  {{lugar.plan}}  -  
+        <span *ngSwitchCase = "1" [ngStyle]="{color: 'green'}">MuyCercano</span>  
+        <span *ngSwitchCase = "2" [ngStyle]="{color: 'blue'}">Cercano</span> 
+        <span *ngSwitchCase = "3" [ngStyle]="{color: 'red'}">Lejano</span>
+      </li>
+    </a> 
+  </ng-container>
+</ul> -->

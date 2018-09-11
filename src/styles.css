@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+.numero_par {
+  background-color: blue;
+  color: bisque;
+
+}
+#cuadrado{
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+.padding{
+  padding: 15px;
+  margin-bottom: 15px;
+}
