@@ -9,7 +9,7 @@ import { AutorizacionService } from '../../services/autorizacion.service';
 export class LoginComponent implements OnInit {
 
   constructor(private autorizacionService:AutorizacionService) {
-    this.autorizacionService.login('eamil','password');
+    this.autorizacionService.servicioLogin('eamil','password');
    }
 
   ngOnInit() {
