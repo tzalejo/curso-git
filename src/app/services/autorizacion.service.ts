@@ -2,13 +2,40 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth/auth';
 import swal from 'sweetalert2';
 import { Router } from '@angular/router'; // para redirigir una vez logueado
-// import {} from '';
+// importo la libreria completa de firebase
+import * as firebase from 'firebase/app';
 
 @Injectable()
 export class AutorizacionService {
   
   constructor(private angularFileAuth: AngularFireAuth, private router: Router) { 
     this.servicioEsLogueado();
+  }
+
+  /**
+   * githubLogin funcion para loguearse con hithub
+   * 8402cecdcd72c2a251497186ac1ab69e128a090a
+   */
+  public githubLogin() {
+    this.angularFileAuth.auth.signInWithPopup(new firebase.auth.GithubAuthProvider())
+        .then((result) => {
+          console.log(result);// para ver q devuelve..
+          swal({
+            title: 'Informativa',
+            text: 'El usuario se loggeado con éxito!',
+            type: 'success',
+            confirmButtonText:'Aceptar'
+          });
+          this.router.navigate(['lugares']);
+        })
+        .catch((error) => {
+          swal({
+            title: 'Error',
+            text: 'Un error ha ocurrido! - ' + error,
+            type: 'error',
+            confirmButtonText:'Aceptar'
+          });
+        })
   }
   public servicioLogin (email,pass){
     // console.log('emtodo del login');
@@ -27,12 +54,12 @@ export class AutorizacionService {
         .catch((error)=>{
           swal({
             title: 'Error',
-            text: 'Un error ha ocurrido!' + error,
+            text: 'Un error ha ocurrido! - ' + error,
             type: 'error',
             confirmButtonText:'Aceptar'
           });
           // console.log(error); // muestro q devuelve error
-        })
+        });
   };
   public servicioRegistro(email,pass){
         // console.log('medotod de registro');
