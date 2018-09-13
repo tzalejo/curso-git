@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AutorizacionService } from '../../services/autorizacion.service';
 
 @Component({
@@ -6,15 +6,13 @@ import { AutorizacionService } from '../../services/autorizacion.service';
   templateUrl: './registro.component.html'
   // styleUrls: ['./registro.component.css']
 })
-export class RegistroComponent implements OnInit {
+export class RegistroComponent {
   // variable q vienen del formulario..
   resgistro:any ={};
   
   constructor(private autorizacionService: AutorizacionService) {
   }
   
-  ngOnInit() {
-  }
   // funcion q llama desde html registro.component.html
   registrar(){
     // console.log(this.resgistro.email);

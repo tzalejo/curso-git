@@ -10,12 +10,12 @@
       </div>
 
       <div class="form-label-group">
-        <input type="email"  class="form-control" placeholder="Email address" required="" autofocus="">
+        <input type="email" name="email" class="form-control" [(ngModel)]="login.email" placeholder="Email address" required="" autofocus="">
         <label for="inputEmail">Email address</label>
       </div>
 
       <div class="form-label-group">
-        <input type="password" class="form-control" placeholder="Password" required="">
+        <input type="password" name="password" class="form-control" [(ngModel)]="login.password" placeholder="Password" required="">
         <label for="inputPassword">Password</label>
       </div>
 
@@ -25,7 +25,7 @@
         </label>
       </div>
       <!-- <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button> -->
-      <a class="btn btn-primary btn-block">Login</a>
+      <a class="btn btn-primary btn-block" (click)="logueo()">Login</a>
       <a class="btn btn-primary btn-block">Cancelar</a>
       <p class="mt-5 mb-3 text-muted text-center">© 2017-2018</p>
     </form>

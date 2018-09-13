@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AutorizacionService } from '../../services/autorizacion.service';
 
 @Component({
@@ -6,13 +6,15 @@ import { AutorizacionService } from '../../services/autorizacion.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-
+export class LoginComponent {
+  // variable q vienen del formulario..
+  login:any ={};
   constructor(private autorizacionService:AutorizacionService) {
-    this.autorizacionService.servicioLogin('eamil','password');
-   }
+  }
 
-  ngOnInit() {
+  logueo(){
+    this.autorizacionService.servicioLogin(this.login.email,this.login.password);
+    
   }
 
 }
