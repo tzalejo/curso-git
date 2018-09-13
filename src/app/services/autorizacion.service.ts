@@ -5,6 +5,7 @@ import swal from 'sweetalert2';
 export class AutorizacionService {
   
   constructor(private angularFileAuth: AngularFireAuth) { 
+    this.servicioEsLogueado();
   }
   public servicioLogin (email,pass){
     // console.log('emtodo del login');
@@ -51,5 +52,12 @@ export class AutorizacionService {
           });
           // console.log(error); // muestro q devuelve error
         })
+  }
+  // esta funcion la vamos a usar si un usuario se registro
+  public servicioEsLogueado(){
+    // este objeto solo existe cuando el usuario esta registrado..
+    console.log('variable angularfileauth.authstate');
+    console.log(this.angularFileAuth.authState);
+    return this.angularFileAuth.authState;
   }
 }

@@ -24,6 +24,7 @@ import { ContarClickDirective } from './directives/contar-click.directive';
 // servicios
 import { LugaresService } from './services/lugares.service'
 import { AutorizacionService } from './services/autorizacion.service';
+import { MyGuardService } from './services/my-guard.service';
 
 // firebase
 import { environment } from '../environments/environment';
@@ -40,7 +41,7 @@ const appRoutes: Routes =[
   { path: 'contacto', component: ContactoComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: RegistroComponent },
-  { path: 'crear/:id', component: CrearComponent }
+  { path: 'crear/:id', component: CrearComponent, canActivate:[MyGuardService] }
 ];
 
 @NgModule({
@@ -72,7 +73,7 @@ const appRoutes: Routes =[
     BrowserAnimationsModule
 
   ],
-  providers: [LugaresService,AutorizacionService], // los servercios
+  providers: [LugaresService,AutorizacionService, MyGuardService], // los servercios
   bootstrap: [AppComponent] // componente de inicio
 })
 export class AppModule { }

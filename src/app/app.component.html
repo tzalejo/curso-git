@@ -14,10 +14,9 @@
         <a class="nav-link" routerLinkActive ="active" routerLink="/contacto">Contactos</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+    <form class="form-inline my-2 my-lg-0" *ngIf="!esLogueado">
       <button class="btn btn-outline-success mr-sm-2" routerLink="/login">Login</button>
       <button class="btn btn-outline-success my-2 my-sm-0" routerLink="/registro">Registro</button>
-
     </form>
   </div>
 </nav>
