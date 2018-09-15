@@ -14,7 +14,7 @@ export class AutorizacionService {
 
   /**
    * githubLogin funcion para loguearse con hithub
-   * 8402cecdcd72c2a251497186ac1ab69e128a090a
+   * 
    */
   public githubLogin() {
     this.angularFileAuth.auth.signInWithPopup(new firebase.auth.GithubAuthProvider())
@@ -88,8 +88,6 @@ export class AutorizacionService {
   // esta funcion la vamos a usar si un usuario se registro
   public servicioEsLogueado(){
     // este objeto solo existe cuando el usuario esta registrado..
-    console.log('variable angularfileauth.authstate');
-    console.log(this.angularFileAuth.authState);
     return this.angularFileAuth.authState;
   };
 
@@ -106,7 +104,8 @@ export class AutorizacionService {
   }
 
   // esta funcion me permite obtener el email del login
-  public serviceObtenerEmail(){
-    return this.angularFileAuth.auth.currentUser.email;
-  }
+  // public servicioObtenerEmail(){
+  //   return this.angularFileAuth.auth.currentUser.email;
+  // }
+  
 }

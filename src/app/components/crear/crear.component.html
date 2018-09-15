@@ -1,6 +1,7 @@
 <div class="jumbotron">
   <div class="row">
-      <div class="col-md-8">
+    <div class="col-md"></div>
+    <div class="col-md-10">
           <h2>Datos de la Empresa</h2>
           <label for="">Nombre</label>
           <input type="text" class="form-control" name="nombre" [(ngModel)]="lugar.nombre">
@@ -18,21 +19,37 @@
           <input type="text" class="form-control" name="plan" [(ngModel)]="lugar.plan">
 
           <h2>Datos de Direccion</h2>
-          
+          <div class="card">
+            <div class="card-header">
+              <h5>Buscar Direccion en google maps</h5>
+            </div>
+            <div class="card-body">
+              <form>
+                <input class="form-control" [formControl]="searchField">
+              </form>
+              <ul class="list-group">
+                <li class="list-group-item" 
+                *ngFor="let result of results$ | async"
+                (click)="obtenerDireccion(result)"
+                >{{result.formatted_address}}</li>
+              </ul>                
+            </div>
+          </div>
           <label for="">Calle y Numero</label>
-          <input type="text" class="form-control" name="calle" [(ngModel)]="lugar.calle">
+          <input type="text" class="form-control" name="calle" [(ngModel)]="lugar.calle" placeholder="calle" >
           
           <label for="">Ciudad</label>
-          <input type="text" class="form-control" name="ciudad" [(ngModel)]="lugar.ciudad">
+          <input type="text" class="form-control" name="ciudad" [(ngModel)]="lugar.ciudad" placeholder="ciudad" >
           
           <label for="">Pais</label>
-          <input type="text" class="form-control" name="pais" [(ngModel)]="lugar.pais">
+          <input type="text" class="form-control" name="pais" [(ngModel)]="lugar.pais" placeholder="pais" >
           
           <br>
           <!-- <a class="btn btn-primary">Enviar</a>
           <a class="btn btn-secondary" routerLink ="/lugares">Cancelar</a> -->
           <button type="submit" class="btn btn-primary" (click)="guardarLugar()">Enviar</button>
           <button type="submit" class="btn btn-secondary" routerLink="/lugares">Cancelar</button>
-        </div>
+    </div>
+    <div class="col-md"></div>
   </div>
 </div>

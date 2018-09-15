@@ -9,14 +9,19 @@ import swal from 'sweetalert2';
 export class AppComponent {
   // variable q mantendra si un usuario se registro o no..valor boolean
   esLogueado = false;
-  email = null; // para almacenar el email del usuario logueado
+  credencial = null; // para almacenar el credencial del usuario logueado
+  
   constructor( private autorizacionService: AutorizacionService){
     this.autorizacionService.servicioEsLogueado()
         .subscribe((result) =>{
           // 
           if (result && result.uid) {
             this.esLogueado = true;
-            this.email = autorizacionService.serviceObtenerEmail();  
+            this.credencial = result; //autorizacionService.servicioObtenerEmail();  
+            // setTimeout(() => {
+            //   this.usuarioLogin= this.autorizacionService.serviciObtenerUsuario().currentUser.email;
+            //   // console.log(this.usuarioLogin);
+            // },500);
           } else {
             this.esLogueado = false;  
           }
