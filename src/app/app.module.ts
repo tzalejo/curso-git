@@ -16,6 +16,7 @@ import { RegistroComponent } from './components/registro/registro.component';
 //libreria para formateo de texto
 import { LinkifystrPipe } from './pipes/linkifystr.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AgmCoreModule} from '@agm/core';
 
 // directivas 
 import { ResaltarDirective } from './directives/resaltar.directive';
@@ -71,7 +72,10 @@ const appRoutes: Routes =[
     AngularFireDatabaseModule,
     HttpModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AgmCoreModule.forRoot({
+      apiKey:'AIzaSyB79lSJEHGiYQ_VV17BdY_3sj9b6ICN310'
+    })
 
   ],
   providers: [LugaresService,AutorizacionService, MyGuardService], // los servercios

@@ -4,6 +4,9 @@
 
 </div> 
 <a class="btn btn-primary" (click)="animar()">Animar</a>-->
+<agm-map [latitude]="lat" [longitude]="lng">
+  <agm-marker *ngFor="let lugar of lugares" [latitude]="lugar.lat" [longitude]="lugar.lng"></agm-marker>
+</agm-map>
 <div class="jumbotron">
   <div class="row">
     <div class="col-md-8">

@@ -10,7 +10,7 @@ export class AppComponent {
   // variable q mantendra si un usuario se registro o no..valor boolean
   esLogueado = false;
   credencial = null; // para almacenar el credencial del usuario logueado
-  
+
   constructor( private autorizacionService: AutorizacionService){
     this.autorizacionService.servicioEsLogueado()
         .subscribe((result) =>{

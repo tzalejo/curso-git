@@ -27,8 +27,9 @@ import swal from 'sweetalert2'
   ]
 })
 export class LugaresComponent implements OnInit {
+
   title = 'Bienvenidos a Platzi Square';
-  key_api ='AIzaSyDTjl21z5Wbr3KR8r56_-l35rLi-g2MfU4';
+  // key_api ='AIzaSyDTjl21z5Wbr3KR8r56_-l35rLi-g2MfU4';
   lugares = null;
   state= 'inicial'; // contendra el estado inicial de la animacion, en este caso el 'inicial'
   // para cambiar los estados 'state'
