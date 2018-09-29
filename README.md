@@ -1,3 +1,6 @@
+# curso-git-github
+Repo para el curso de git en platzi, codigo que uso fue hecho en el curso angular 4(version 6).
+
 # PlatziSquare
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
